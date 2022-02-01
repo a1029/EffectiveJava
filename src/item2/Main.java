@@ -1,5 +1,6 @@
 package item2;
 
+import static item2.NyPizza.Size.MEDIUM;
 import static item2.NyPizza.Size.SMALL;
 import static item2.Pizza.Topping.*;
 
@@ -16,6 +17,11 @@ public class Main {
         NyPizza pizza = new NyPizza.Builder(SMALL)
                 .addTopping(SAUSAGE)
                 .addTopping(ONION)
+                .build();
+
+        Calzone pizza2 = new Calzone.Builder()
+                .addTopping(PEPPER)
+                .sauceInside()
                 .build();
     }
 }

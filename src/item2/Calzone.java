@@ -4,11 +4,12 @@ public class Calzone extends Pizza{
 
     private final boolean sauceInside;
 
-    static class Builder extends Pizza.Builder<Builder>{
+    public static class Builder extends Pizza.Builder<Builder> {
+
         private boolean sauceInside = false;
 
         public Builder sauceInside() {
-            sauceInside = true;
+            this.sauceInside = true;
             return this;
         }
 

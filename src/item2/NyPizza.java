@@ -3,8 +3,7 @@ package item2;
 import java.util.Objects;
 
 public class NyPizza extends Pizza{
-
-    public enum Size { SMALL, MEDIUM, LARGE };
+    enum Size { SMALL, MEDIUM, LARGE }
     private final Size size;
 
     public static class Builder extends Pizza.Builder<Builder> {
@@ -15,7 +14,7 @@ public class NyPizza extends Pizza{
         }
 
         @Override
-        public NyPizza build() {
+        NyPizza build() {
             return new NyPizza(this);
         }
 
@@ -25,8 +24,8 @@ public class NyPizza extends Pizza{
         }
     }
 
-    NyPizza(Builder builder) {
+    public NyPizza(Builder builder) {
         super(builder);
-        size = builder.size;
+        this.size = builder.size;
     }
 }
