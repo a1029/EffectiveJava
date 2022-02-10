@@ -4,6 +4,8 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.HashMap;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class SumTest {
@@ -26,6 +28,19 @@ class SumTest {
         System.out.println(diff1 + "초");
         System.out.println(diff2 + "초");
         Assertions.assertThat(diff1).isGreaterThan(diff2);
+
+    }
+
+    @Test
+    @DisplayName("keySet 메서드가 반환하는 인스턴스가 싱글톤인지 테스트")
+    void test() {
+        HashMap<String, Integer> map = new HashMap<>();
+        map.put("key1", 1);
+        map.put("key2", 2);
+        map.put("key3", 3);
+
+        Assertions.assertThat(map.keySet()).isSameAs(map.keySet());
+
     }
 
 }
