@@ -13,8 +13,17 @@ public class Main {
         System.out.println("아무렴");
     }
 
+    public static void useSystemGc() {
+        new Room(99);
+        System.gc();
+        System.out.println("아무렴");
+    }
+
     public static void main(String[] args) throws Exception {
         useTryResource();
+        System.out.println("------------------");
         notUseTryResource();
+        System.out.println("------------------");
+        useSystemGc();
     }
 }
